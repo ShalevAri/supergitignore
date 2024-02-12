@@ -1,5 +1,3 @@
-### STANDARD GIT IGNORE FILE ###
-
 # DEPENDENCIES
 node_modules/
 /.pnp
@@ -36,6 +34,7 @@ yarn-error.log*
 .idea
 .cache/
 .next/
+out/
 next-env.d.ts
 .nuxt/
 tmp/
@@ -57,3 +56,49 @@ Thumbs.db
 
 # TYPESCRIPT
 *.tsbuildinfo
+
+# OS-specific files
+desktop.ini
+$RECYCLE.BIN/
+System Volume Information/
+Windows.old/
+ehthumbs.db
+
+# Docker
+docker-compose.yml
+docker-compose.override.yml
+docker-compose.debug.yml
+Dockerfile*
+*.dockerignore
+
+# Kubernetes
+*.komodoproject
+.komodotools
+.kube/
+kubeconfig
+*.kubeconfig
+*.yaml
+*.yml
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+
+# Visual Studio Code
+.vscode/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyo
+*.pyc
