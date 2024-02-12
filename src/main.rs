@@ -4,15 +4,7 @@ use std::io::{self, prelude::*};
 
 fn main() {
     let gitignore_path = ".gitignore";
-    let gitignore_template_path = "src/gitignore.txt";
-
-    let gitignore_content = match fs::read_to_string(gitignore_template_path) {
-        Ok(content) => content,
-        Err(_) => {
-            eprintln!("Error reading gitignore template file. Make sure '{}' exists.", gitignore_template_path);
-            return;
-        }
-    };
+    let gitignore_content = include_str!("gitignore.txt");
 
     if fs::metadata(gitignore_path).is_ok() {
         let options = ["Add to the existing gitignore file", "Replace the existing gitignore file", "Abort the operation and do nothing"];
@@ -32,7 +24,7 @@ fn main() {
                 file.read_to_string(&mut contents).expect("Unable to read gitignore file");
 
                 contents.push_str("\n");
-                contents.push_str(&gitignore_content);
+                contents.push_str(gitignore_content);
 
                 fs::write(gitignore_path, contents).expect("Unable to write to gitignore file");
 
