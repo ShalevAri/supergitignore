@@ -15,10 +15,10 @@ fn main() {
     };
 
     if fs::metadata(gitignore_path).is_ok() {
-        let options = ["Add to existing .gitignore", "Replace existing .gitignore", "Abort"];
+        let options = ["Add to the existing gitignore file", "Replace the existing gitignore file", "Abort the operation and do nothing"];
 
         let choice = Select::with_theme(&ColorfulTheme::default())
-            .with_prompt("A .gitignore file already exists. Choose an option:")
+            .with_prompt("A gitignore file already exists. What would you like to do?")
             .items(&options)
             .default(0)
             .interact()
@@ -27,31 +27,31 @@ fn main() {
         match choice {
             0 => {
                 // Add to existing .gitignore
-                let mut file = File::open(gitignore_path).expect("Unable to open .gitignore file");
+                let mut file = File::open(gitignore_path).expect("Unable to open gitignore file");
                 let mut contents = String::new();
-                file.read_to_string(&mut contents).expect("Unable to read .gitignore file");
+                file.read_to_string(&mut contents).expect("Unable to read gitignore file");
 
                 contents.push_str("\n");
                 contents.push_str(&gitignore_content);
 
-                fs::write(gitignore_path, contents).expect("Unable to write to .gitignore file");
+                fs::write(gitignore_path, contents).expect("Unable to write to gitignore file");
 
-                println!("Added to existing .gitignore file.");
+                println!("Successfully added to the existing gitignore file!");
             }
             1 => {
                 // Replace existing .gitignore
                 fs::write(gitignore_path, gitignore_content).expect("Unable to write to .gitignore file");
-                println!("Replaced existing .gitignore file.");
+                println!("Successfully replaced existing gitignore file!");
             }
             2 => {
                 // Abort
-                println!("Operation aborted. No changes made.");
+                println!("Operation aborted. No changes were made.");
             }
             _ => unreachable!(),
         }
     } else {
         // .gitignore does not exist, create a new one
-        fs::write(gitignore_path, gitignore_content).expect("Unable to create .gitignore file");
-        println!("Created a new .gitignore file.");
+        fs::write(gitignore_path, gitignore_content).expect("Unable to create a gitignore file");
+        println!("Successfully created a new gitignore file!");
     }
 }
