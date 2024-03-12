@@ -67,44 +67,8 @@ System Volume Information/
 Windows.old/
 ehthumbs.db
 
-# DOCKER
-docker-compose.yml
-docker-compose.override.yml
-docker-compose.debug.yml
-Dockerfile*
-*.dockerignore
-
-# KUBERNETES
-*.komodoproject
-.komodotools
-.kube/
-kubeconfig
-*.kubeconfig
-*.yaml
-*.yml
-
-# TERRAFORM
-.terraform/
-*.tfstate
-*.tfstate.backup
-*.tfvars
-
 # VISUAL STUDIO CODE
 .vscode/
-
-# JAVA
-*.class
-*.jar
-*.war
-*.ear
-
-# PYTHON
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.pyo
-*.pyc
 
 # RUST
 target/
@@ -114,6 +78,3 @@ lib-cov/
 coverage/
 .nyc_output/
 .nyc_tmp/
-
-# FRONTEND BUILD
-dist/
