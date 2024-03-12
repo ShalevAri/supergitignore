@@ -1,5 +1,7 @@
 # supergitignore
 
+WARNING: In previous versions, there were a few accidental ignores that were not supposed to be there and may have caused damage to some people. As a result, I have removed all of them. I apologize for any inconvenience this may have caused and will continue working on the .gitignore file to ensure that there are no other errors that I might have missed. If you spot anything yourself feel absolutely free to create pull requests on the GitHub repo and I will merge as soon as possible
+
 I always create new projects and until now I used DOOM emacs for creating my `.gitignore` files.
 DOOM emacs (a distribution of emacs) has this nice built-in feature that if you
 create a new `.gitignore` file with it, there would be a few suggestions that would show up
